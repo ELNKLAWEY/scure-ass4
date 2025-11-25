@@ -38,7 +38,7 @@ If you have the project in a Git repository:
 
 ```bash
 git clone <repository-url>
-cd Secure-Software-Develpment-2305165-Assignment-04
+cd Secure-Software-Develpment-2305180-Assignment-04
 ```
 
 Or extract the project files to your desired location.
