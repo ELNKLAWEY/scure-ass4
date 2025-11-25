@@ -1,0 +1,10 @@
+rules:
+  - id: xss-direct-output
+    message: Direct output without encoding - potential XSS
+    severity: ERROR
+    languages: [php]
+    pattern: |
+      echo ...;
+    metadata:
+      category: security
+      technology: [php]

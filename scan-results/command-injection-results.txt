@@ -1,0 +1,76 @@
+                    
+                    
+┌──────────────────┐
+│ 14 Code Findings │
+└──────────────────┘
+                                                                         
+  [36m[22m[24m  C:\xampp\htdocs\mutillidae\content-security-policy.php[0m
+   ❯❯❱ semgrep-rules.command-injection
+          Potential command injection - user input in shell execution
+                                                                     
+          119┆ echo '<pre class="output">'.shell_exec("echo -n " . $lMessage).'</pre>';
+                                                                  
+  [36m[22m[24m  C:\xampp\htdocs\mutillidae\database-offline.php[0m
+   ❯❯❱ semgrep-rules.command-injection
+          Potential command injection - user input in shell execution
+                                                                     
+           40┆ $lDatabasePingResult = shell_exec("ping -c 1 $lDatabaseHost");
+            ⋮┆----------------------------------------
+           46┆ $lDatabaseTracerouteResult = shell_exec("traceroute --max-hops=2 --wait=2 $lDatabaseHost
+               2>&1");                                                                                 
+            ⋮┆----------------------------------------
+           52┆ $lTracerouteTCPResult = shell_exec("traceroute --max-hops=2 --wait=2 --tcp -p
+               $lDatabasePort $lDatabaseHost 2>&1");                                        
+            ⋮┆----------------------------------------
+           86┆ $lLDAPPingResult = shell_exec("ping -c 1 $lLDAPHost");
+            ⋮┆----------------------------------------
+           92┆ $lLDAPTracerouteResult = shell_exec("traceroute --max-hops=2 --wait=2 $lLDAPHost 2>&1");
+            ⋮┆----------------------------------------
+           98┆ $lTracerouteTCPResult = shell_exec("traceroute --max-hops=2 --wait=2 --tcp -p $lLDAPPort
+               $lLDAPHost 2>&1");                                                                      
+                                                            
+  [36m[22m[24m  C:\xampp\htdocs\mutillidae\dns-lookup.php[0m
+   ❯❯❱ semgrep-rules.command-injection
+          Potential command injection - user input in shell execution
+                                                                     
+          165┆ echo '<pre class="output">'.shell_exec("nslookup " . $lTargetHost).'</pre>';
+                                                      
+  [36m[22m[24m  C:\xampp\htdocs\mutillidae\echo.php[0m
+   ❯❯❱ semgrep-rules.command-injection
+          Potential command injection - user input in shell execution
+                                                                     
+          148┆ echo '<pre class="output">'.shell_exec("echo " . $lMessage).'</pre>';
+                                                                   
+  [36m[22m[24m  C:\xampp\htdocs\mutillidae\test-connectivity.php[0m
+   ❯❯❱ semgrep-rules.command-injection
+          Potential command injection - user input in shell execution
+                                                                     
+           94┆             echo '<pre class="output">' .
+           95┆                             shell_exec("curl --silent -H 'Origin: http://$lCurrentOrigin' "
+               . $lServerURL) .                                                                           
+           96┆                             '</pre>';
+                                                                                
+  [36m[22m[24m  C:\xampp\htdocs\mutillidae\webservices\rest\ws-dns-lookup.php[0m
+   ❯❯❱ semgrep-rules.command-injection
+          Potential command injection - user input in shell execution
+                                                                     
+          100┆ $lOutput = shell_exec($lCommand);
+                                                                          
+  [36m[22m[24m  C:\xampp\htdocs\mutillidae\webservices\rest\ws-echo.php[0m
+   ❯❯❱ semgrep-rules.command-injection
+          Potential command injection - user input in shell execution
+                                                                     
+           95┆ $lOutput = shell_exec($lCommand);
+                                                                                
+  [36m[22m[24m  C:\xampp\htdocs\mutillidae\webservices\soap\ws-dns-lookup.php[0m
+   ❯❯❱ semgrep-rules.command-injection
+          Potential command injection - user input in shell execution
+                                                                     
+          147┆ $lOutput = shell_exec($lCommand);
+                                                                          
+  [36m[22m[24m  C:\xampp\htdocs\mutillidae\webservices\soap\ws-echo.php[0m
+   ❯❯❱ semgrep-rules.command-injection
+          Potential command injection - user input in shell execution
+                                                                     
+          131┆ $lOutput = shell_exec($lCommand);
+

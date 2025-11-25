@@ -1,0 +1,10 @@
+rules:
+  - id: xss-user-input
+    message: Output of user input without encoding
+    severity: ERROR
+    languages: [php]
+    pattern: |
+      echo $_GET[...];
+    metadata:
+      category: security
+      technology: [php]

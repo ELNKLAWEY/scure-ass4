@@ -1,0 +1,10 @@
+rules:
+  - id: xss-variables
+    message: Output of variables without encoding
+    severity: ERROR
+    languages: [php]
+    pattern: |
+      echo $...;
+    metadata:
+      category: security  
+      technology: [php]

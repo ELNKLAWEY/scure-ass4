@@ -1,0 +1,3 @@
+Total Vulnerabilities Found: 870
+Command Injection: 14
+XSS: 859

@@ -1,0 +1,10 @@
+rules:
+  - id: command-injection
+    message: Potential command injection - user input in shell execution
+    severity: ERROR
+    languages: [php]
+    pattern: |
+      shell_exec(...);
+    metadata:
+      category: security
+      technology: [php]
